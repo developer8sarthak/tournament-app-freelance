@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Matches - FreeFire Tournament</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #e74c3c;
+            font-size: 2em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .container {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 90%;
+        }
+        .title {
+            font-size: 1.8em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e74c3c;
+        }
+        .match {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+            border: 1px solid #333;
+        }
+        .match:hover {
+            background-color: #252525;
+            transform: translateY(-2px);
+        }
+        .dropdown {
+            background-color: #222;
+            margin-top: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 0 15px;
+        }
+        .option {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 120px;
+            text-align: center;
+            transition: transform 0.2s, background-color 0.3s;
+            border: 1px solid #333;
+        }
+        .option:hover {
+            background-color: #252525;
+            transform: translateY(-2px);
+        }
+        .footer {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 15px;
+            border-top: 3px solid #e74c3c;
+        }
+        .contact-link-footer {
+            color: #e74c3c;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-link-footer:hover {
+            color: #ff6b6b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                font-size: 1.5em;
+                padding: 15px;
+            }
+            .container {
+                padding: 15px;
+                width: 95%;
+            }
+            .title {
+                font-size: 1.5em;
+            }
+            .options {
+                flex-direction: column;
+            }
+            .option {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 1.2em;
+                padding: 10px;
+            }
+            .match {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Titan Loards - Upcoming Matches
+    </div>
+    <div class="container">
+        <div class="title">
+            Upcoming Matches for the Week
+        </div>
+        <hr>
+        <div class="match" onclick="toggleDropdown('dropdown1')">
+            <div style="display: flex; align-items: center;">
+                <img src="https://storage.googleapis.com/a1aa/image/jLXfP9jNutXlECUldP49qUf6BDQkteaOT0l18nvfm5Ro74fgC.jpg" alt="Team Mode logo" width="50" height="50">
+                <div>Battle Royale Team</div>
+            </div>
+        </div>
+        <div id="dropdown1" class="dropdown">
+            <p>Monday: 10:00 AM</p>
+            <p>Tuesday: 11:00 AM</p>
+            <p>Wednesday: 12:00 PM</p>
+            <p>Thursday: 01:00 PM</p>
+            <p>Friday: 02:00 PM</p>
+            <p>Saturday: 03:00 PM</p>
+            <p>Sunday: 04:00 PM</p>
+        </div>
+        <hr>
+        <div class="match" onclick="toggleDropdown('dropdown2')">
+            <div style="display: flex; align-items: center;">
+                <img src="https://storage.googleapis.com/a1aa/image/gEOcZi4qVPYwEtq4k7IuGPQ2eNLQc2e3sNB6O6xRKVr4OePoA.jpg" alt="Solo Mode logo" width="50" height="50">
+                <div>Battle Royale Solo</div>
+            </div>
+        </div>
+        <div id="dropdown2" class="dropdown">
+            <p>Monday: 11:00 AM</p>
+            <p>Tuesday: 12:00 PM</p>
+            <p>Wednesday: 01:00 PM</p>
+            <p>Thursday: 02:00 PM</p>
+            <p>Friday: 03:00 PM</p>
+            <p>Saturday: 04:00 PM</p>
+            <p>Sunday: 05:00 PM</p>
+        </div>
+        <hr>
+        <div class="match" onclick="toggleDropdown('dropdown3')">
+            <div style="display: flex; align-items: center;">
+                <img src="https://storage.googleapis.com/a1aa/image/xEchEzrQCX6RDBUed6zURUcxD1357Y2Dls88oGKPLWpbHfHUA.jpg" alt="Clash Squad logo" width="50" height="50">
+                <div>Clash Squad</div>
+            </div>
+        </div>
+        <div id="dropdown3" class="dropdown">
+            <p>Monday: 12:00 PM</p>
+            <p>Tuesday: 01:00 PM</p>
+            <p>Wednesday: 02:00 PM</p>
+            <p>Thursday: 03:00 PM</p>
+            <p>Friday: 04:00 PM</p>
+            <p>Saturday: 05:00 PM</p>
+            <p>Sunday: 06:00 PM</p>
+        </div>
+        <hr>
+        <div class="match" onclick="toggleDropdown('dropdown4')">
+            <div style="display: flex; align-items: center;">
+                <img src="https://storage.googleapis.com/a1aa/image/jvRT8e8ImZw6Kaj63EQpqeiPQ2Uu4usTbBTpnkNYcSc2OePoA.jpg" alt="Lone Wolf logo" width="50" height="50">
+                <div>Lone Wolf</div>
+            </div>
+        </div>
+        <div id="dropdown4" class="dropdown">
+            <p>Monday: 01:00 PM</p>
+            <p>Tuesday: 02:00 PM</p>
+            <p>Wednesday: 03:00 PM</p>
+            <p>Thursday: 04:00 PM</p>
+            <p>Friday: 05:00 PM</p>
+            <p>Saturday: 06:00 PM</p>
+            <p>Sunday: 07:00 PM</p>
+        </div>
+        <hr>
+    </div>
+    <div class="options">
+        <a href="index.html" class="option" style="color: white; text-decoration: none;">
+            <i class="fas fa-home"></i>
+            <div>Home</div>
+        </a>
+        <a href="upcoming.html" class="option" style="color: white; text-decoration: none;">
+            <i class="fas fa-calendar-alt"></i>
+            <div>Upcoming Matches</div>
+        </a>
+        <a href="reasult.html" class="option" style="color: white; text-decoration: none;">
+            <i class="fas fa-trophy"></i>
+            <div>Match Results</div>
+        </a>
+    </div>
+    <div class="footer">
+        © 2023 FreeFire Tournament. All rights reserved. <a href="mailto:contact@freefiretournament.com" class="contact-link-footer">Contact</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
