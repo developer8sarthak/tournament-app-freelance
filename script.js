@@ -1,9 +1,14 @@
-function showContent(section) {
-    // Hide all sections
-    document.querySelectorAll('.profile').forEach(function(div) {
-        div.style.display = 'none';
-    });
 
-    // Show the selected section
-    document.getElementById(section).style.display = 'flex';
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}, 3000);
+
+function toggleDropdown(id) {
+    var dropdown = document.getElementById(id);
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+    } else {
+        dropdown.style.display = "none";
+    }
 }

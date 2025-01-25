@@ -9,18 +9,18 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #0d0d0d; /* Darker background for a gaming feel */
-            color: #e0e0e0; /* Lighter text color for contrast */
+            background-color: #f9f9f9; /* Light background for a clean feel */
+            color: #333; /* Darker text color for better readability */
             margin: 0;
             padding: 0;
         }
         .header {
-            background-color: #1a1a1a; /* Slightly lighter header */
+            background-color: #ffffff; /* White header for a clean look */
             padding: 20px;
             text-align: center;
-            border-bottom: 3px solid #e74c3c; /* Red border for emphasis */
+            border-bottom: 3px solid #3498db; /* Blue border for emphasis */
             font-size: 2em; /* Increased font size for header */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+            text-shadow: none; /* Removed shadow for a cleaner look */
         }
         .container {
             padding: 30px; /* Increased padding for better spacing */
@@ -29,32 +29,34 @@
             font-size: 2em; /* Increased font size for title */
             text-align: center; /* Center align title */
             margin-bottom: 20px; /* Space below title */
-            color: #e74c3c; /* Red color for title */
+            color: #3498db; /* Blue color for title */
         }
         .result {
-            background-color: #333; /* Darker background for results */
+            background-color: #ffffff; /* White background for results */
             margin-bottom: 20px; /* Space between results */
             padding: 15px; /* Padding for results */
             border-radius: 10px; /* Rounded corners */
             cursor: pointer; /* Pointer cursor for clickable results */
             transition: background-color 0.3s; /* Smooth transition for hover effect */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         }
         .result:hover {
-            background-color: #444; /* Darker background on hover */
+            background-color: #f0f0f0; /* Light gray background on hover */
         }
         .dropdown {
             display: none; /* Hidden by default */
-            background-color: #222; /* Darker background for dropdown */
+            background-color: #ffffff; /* White background for dropdown */
             padding: 10px; /* Padding for dropdown */
             border-radius: 5px; /* Rounded corners */
             margin-top: 10px; /* Space above dropdown */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         }
         .options {
             text-align: center; /* Center align options */
             margin-top: 20px; /* Space above options */
         }
         .option {
-            color: white;
+            color: #3498db; /* Blue color for options */
             text-decoration: none;
             margin: 0 15px; /* Space between options */
             display: inline-block; /* Inline block for spacing */
@@ -62,14 +64,27 @@
         .footer {
             text-align: center; /* Center align footer */
             padding: 20px; /* Padding for footer */
-            background-color: #1a1a1a; /* Footer background */
-            color: #e0e0e0; /* Footer text color */
+            background-color: #ffffff; /* Footer background */
+            color: #333; /* Footer text color */
             position: relative; /* Positioning for footer */
             bottom: 0; /* Stick to bottom */
             width: 100%; /* Full width */
         }
         .contact-link-footer {
-            color: #e74c3c; /* Red color for contact link */
+            color: #3498db; /* Blue color for contact link */
+        }
+        /* Add these rules to the existing style section */
+        body::-webkit-scrollbar,
+        .container::-webkit-scrollbar,
+        .dropdown::-webkit-scrollbar {
+            display: none;
+        }
+
+        body,
+        .container,
+        .dropdown {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
@@ -162,7 +177,7 @@
         </a>
     </div>
     <div class="footer">
-        © 2023 FreeFire Tournament. All rights reserved. <a href="mailto:contact@freefiretournament.com" class="contact-link-footer">Contact</a>
+        <p>© 2023 Titan Lords. All rights reserved. <a href="mailto:contact@freefiretournament.com" class="contact-link-footer">Contact</a></p>
     </div>
     <script src="script.js"></script>
 </body>

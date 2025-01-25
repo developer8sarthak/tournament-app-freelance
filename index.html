@@ -1,80 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sarthak's personal website where you can explore his journey as a young entrepreneur, web developer, and AI enthusiast.">
-    <meta name="keywords" content="Sarthak, web development, AI tools, entrepreneurship, technology">
-    <title>Sarthak's Website</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Titan Lords Free Fire Tournament</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            color: #3498db;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9; /* Light background for a clean feel */
+            color: #333; /* Darker text color for better readability */
+            margin: 0;
+            padding: 0;
+            -ms-overflow-style: none;  /* for Internet Explorer and Edge */
+            scrollbar-width: none;  /* for Firefox */
+        }
+        body::-webkit-scrollbar {
+            display: none;  /* for Chrome, Safari, and Opera */
+        }
+        header {
+            background-color: #ffffff; /* White header for a clean look */
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #3498db; /* Blue border for emphasis */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em; /* Slightly reduced font size for header */
+            text-shadow: none; /* Removed shadow for a cleaner look */
+        }
+        nav {
+            background-color: #eaeaea; /* Light nav background */
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: #3498db; /* Blue color for links */
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.2em; /* Smaller font size for links */
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+        nav a:hover {
+            color: #2980b9; /* Darker blue on hover */
+        }
+        .container {
+            padding: 30px; /* Increased padding for better spacing */
+        }
+        .game-mode {
+            background-color: #ffffff; /* White background for game modes */
+            margin-bottom: 30px; /* Increased margin for separation */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        .game-mode h2 {
+            margin-top: 0;
+            color: #3498db; /* Blue color for headings */
+            text-align: center; /* Center align headings */
+        }
+        .game-mode p {
+            margin: 5px 0;
+            text-align: center; /* Center align paragraphs */
+        }
+        .game-mode .join-btn {
+            background-color: #3498db; /* Blue button */
+            color: #fff;
+            padding: 10px 20px; /* Adjusted padding for button */
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        .game-mode .join-btn:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            border-top: 3px solid #3498db;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+            color: #333;
+        }
+        .contact-link-footer {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-link-footer:hover {
+            color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="logo">Sarthak</div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="resume.html">resume</a>
-            <a href="https://www.blackbox.ai/agent/mycodebuddyNth5NLO" target="_blank">My AI</a>
+    <header>
+        <h1>Titan Lords</h1>
+        <h2><a href="mailto:titan1lords@gmail.com">Contact Us</a></h2>
+    </header>
+    <nav>
+        <a href="stats.html" onclick="navigateToPage(event)">Player Stats</a>
+        <a href="reasult.html" onclick="navigateToPage(event)">Match Result</a>
+        <a href="upcoming.html" onclick="navigateToPage(event)">Upcoming Matches</a>
+    </nav>
+    <script>
+        function navigateToPage(event) {
+            event.preventDefault();
+            const targetPage = event.target.getAttribute('href');
+            window.location.href = targetPage;
+        }
+    </script>
+    <div class="container">
+        <div id="br-solo" class="game-mode">
+            <h2>BR Solo</h2>
+            <p>Match Timing: 10:00 AM</p>
+            <a href="https://whatsapp.com/channel/0029VayfjKALI8YPrEbZWn17" class="join-btn">Join</a>
         </div>
-        <div class="github-link">
-            <a href="https://github.com/developer8sarthak" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-            </a>
+        <div id="br-team" class="game-mode">
+            <h2>BR Team</h2>
+            <p>Match Timing: 12:00 PM</p>
+            <a href="https://whatsapp.com/channel/0029VayfjKALI8YPrEbZWn17" class="join-btn">Join</a>
+        </div>
+        <div id="cs-customs" class="game-mode">
+            <h2>CS Customs</h2>
+            <p>Match Timing: 2:00 PM</p>
+            <a href="https://whatsapp.com/channel/0029VayfjKALI8YPrEbZWn17" class="join-btn">Join</a>
+        </div>
+        <div id="lonewolf" class="game-mode">
+            <h2>Lonewolf</h2>
+            <p>Match Timing: 4:00 PM</p>
+            <a href="https://whatsapp.com/channel/0029VayfjKALI8YPrEbZWn17" class="join-btn">Join</a>
         </div>
     </div>
-
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="profile-pic">
-            <a href="https://ibb.co/7KJtmdL"><img src="https://i.ibb.co/vkx4n6R/1737303263024-removebg-preview.png" alt="Sarthak's Profile Picture" border="0"></a>
-        </div>
-        <h1>Welcome to My Website!</h1>
-        <p>I'm Sarthak, a young entrepreneur, web developer, and AI enthusiast.</p>
-        <button class="cta-button">Learn More About Me</button>
-    </div>
-
-    <!-- Content Section -->
-    <div class="content">
-        <h2>About Me</h2>
-        <p class="description">I specialize in web development, AI tools, and digital entrepreneurship. This website serves as a portfolio, blog, and resource hub where I share knowledge and resources. I am also a no-code game developer who creates games using engines like Modd.io, Strukd_Unity, and Sandbox.</p>
-    
-        <h2>Interests and Skills</h2>
-        <ul>
-            <li><strong>Psychology:</strong> Interested in brain psychology and the psychological differences between generations.</li>
-            <li><strong>Business:</strong> Aspires to become a businessman, managing multiple companies. Interested in selling manga in India and considering selling branded bracelets.</li>
-            <li><strong>Technology and Coding:</strong> Passionate about coding, uses GitHub for web projects, and plans to shift to WordPress. Learning HTML, CSS, and Linux. Interested in tech for students in 8th and 9th grades.</li>
-            <li><strong>Writing:</strong> Working on books and articles, including "What Students Think," "Memory of a Human Brain: The Power You Can't Even Think Of," and "Psychological Differences of Gen Alpha and Gen Z." Also working on a blog for the website.</li>
-            <li><strong>Art:</strong> Skilled in art, enjoys using a shading pencil kit, and is considered an artist in class.</li>
-        </ul>
-    
-        <h2>My Projects</h2>
-        <p>Your enthusiasm and proactive steps are commendable. With continued learning, strategic planning, and the right support, your business ideas have the potential to flourish. Keep building your knowledge base, refining your ideas, and don't hesitate to seek advice from mentors or industry professionals.</p>
-    
-        <h2>Passion for Coding</h2>
-        <ul>
-            <li><strong>Addicted to Coding:</strong> I have a strong passion for coding, which sometimes competes with my study time, especially during exams.</li>
-            <li><strong>Learning Enthusiast:</strong> Continuously learning and seeking new coding projects, particularly interested in HTML and CSS projects with solutions.</li>
-        </ul>
-    
-        <h2>Projects and Tools</h2>
-        <ul>
-            <li><strong>Website Development:</strong> Created a website, <a href="https://developer8sarthak.github.io/fav-libro.com/">fav-libro</a>, <a href="https://developer8sarthak.github.io/echostream/">echostream</a>, <a href="https://developer8sarthak.github.io/research_hub/">research_hub</a>.</li>
-            <li><strong>Blogging and Content:</strong> Planning to expand website content by starting a blog on <a href="https://fav-libro-hub.blogspot.com/">Blogger.com</a> to upload articles, books, and related content.</li>
-            <li><strong>Languages and Platforms:</strong> Learning HTML and CSS and interested in improving skills through project-based learning. Also exploring Linux for specific tasks.</li>
-        </ul>
-    
-        <h3>My Coding Mind</h3>
-        <p>My coding mind is curious, resourceful, and driven by both passion and purpose. I am proactive in learning, willing to experiment, and focused on practical applications of my coding skills. As I continue to balance my studies with coding, my dedication and innovative thinking will likely lead to significant achievements in both my academic and entrepreneurial endeavors.</p>
-    </div>
-    
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Sarthak. All rights reserved. <a href="#">Privacy Policy</a></p>
+        <p>© 2023 Titan Lords. All rights reserved. <a href="mailto:contact@freefiretournament.com" class="contact-link-footer">Contact</a></p>
     </footer>
-
 </body>
 </html>
