@@ -1,8 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Titan Lords Free Fire Tournament</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         h1 {
             color: #3498db;
@@ -101,46 +105,119 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Titan Lords</h1>
-        <h2><a href="mailto:titan1lords@gmail.com">Contact Us</a></h2>
     </header>
-    <nav>
-        <a href="stats.html" onclick="navigateToPage(event)">Player Stats</a>
-        <a href="reasult.html" onclick="navigateToPage(event)">Match Result</a>
-        <a href="upcoming.html" onclick="navigateToPage(event)">Upcoming Matches</a>
-    </nav>
-    <script>
-        function navigateToPage(event) {
-            event.preventDefault();
-            const targetPage = event.target.getAttribute('href');
-            window.location.href = targetPage;
-        }
-    </script>
+
     <div class="container">
-        <div id="br-solo" class="game-mode">
-            <h2>BR Solo</h2>
-            <p>Match Timing: 10:00 AM</p>
-            <a href="https://whatsapp.com/channel/0029VayfjKALI8YPrEbZWn17" class="join-btn">Join</a>
+        <div class="card dropdown-trigger" data-target="#br-solo-content">
+            <div class="card-content">
+                <h2>BR Solo</h2>
+                <p>Match Timing: <span class="match-time" data-mode="brSolo">10:00 AM</span></p>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div id="br-solo-content" class="dropdown-content">
+                <a href="https://whatsapp.com/channel/0029VayfjKALI8YPrEbZWn17" class="btn">Join Now</a>
+            </div>
         </div>
         <div id="br-team" class="game-mode">
             <h2>BR Team</h2>
-            <p>Match Timing: 12:00 PM</p>
+            <p>Match Timing: <span class="match-time" data-mode="brTeam">12:00 PM</span></p>
             <a href="https://whatsapp.com/channel/0029VayfjKALI8YPrEbZWn17" class="join-btn">Join</a>
         </div>
         <div id="cs-customs" class="game-mode">
             <h2>CS Customs</h2>
-            <p>Match Timing: 2:00 PM</p>
+            <p>Match Timing: <span class="match-time" data-mode="csCustoms">2:00 PM</span></p>
             <a href="https://whatsapp.com/channel/0029VayfjKALI8YPrEbZWn17" class="join-btn">Join</a>
         </div>
         <div id="lonewolf" class="game-mode">
             <h2>Lonewolf</h2>
-            <p>Match Timing: 4:00 PM</p>
+            <p>Match Timing: <span class="match-time" data-mode="loneWolf">4:00 PM</span></p>
             <a href="https://whatsapp.com/channel/0029VayfjKALI8YPrEbZWn17" class="join-btn">Join</a>
         </div>
     </div>
-    <footer>
-        <p>© 2023 Titan Lords. All rights reserved. <a href="mailto:contact@freefiretournament.com" class="contact-link-footer">Contact</a></p>
-    </footer>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="stats.html" class="nav-item">
+            <i class="fas fa-chart-bar"></i>
+            <span>Stats</span>
+        </a>
+        <a href="result.html" class="nav-item">
+            <i class="fas fa-trophy"></i>
+            <span>Results</span>
+        </a>
+        <a href="upcoming.html" class="nav-item">
+            <i class="fas fa-calendar"></i>
+            <span>Upcoming</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            updateMatchTimes();
+            // ... other initialization code ...
+        });
+
+        function updateMatchTimes() {
+            const times = JSON.parse(localStorage.getItem('matchTimes') || '{}');
+            
+            document.querySelectorAll('.match-time').forEach(element => {
+                const mode = element.dataset.mode;
+                if (times[mode]) {
+                    // Convert 24-hour time to 12-hour format
+                    const [hours, minutes] = times[mode].split(':');
+                    const period = hours >= 12 ? 'PM' : 'AM';
+                    const displayHours = hours % 12 || 12;
+                    element.textContent = `${displayHours}:${minutes} ${period}`;
+                }
+            });
+        }
+    </script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCT7lR1Wojel2MPLSLiG2n7RW9Af2niIrM",
+            authDomain: "titan-loards.firebaseapp.com",
+            projectId: "titan-loards",
+            storageBucket: "titan-loards.firebasestorage.app",
+            messagingSenderId: "140025818403",
+            appId: "1:140025818403:web:b82867b804fe7e4b84b096",
+            measurementId: "G-XFPT7YSBM0",
+            databaseURL: "https://titan-loards-default-rtdb.firebaseio.com"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const database = getDatabase(app);
+
+        // Listen for time updates
+        const timesRef = ref(database, 'matchTimes');
+        onValue(timesRef, (snapshot) => {
+            const data = snapshot.val() || {};
+            document.querySelectorAll('.match-time').forEach(element => {
+                const mode = element.dataset.mode;
+                if (data[mode]) {
+                    // Convert 24-hour time to 12-hour format
+                    const [hours, minutes] = data[mode].split(':');
+                    const period = hours >= 12 ? 'PM' : 'AM';
+                    const displayHours = hours % 12 || 12;
+                    element.textContent = `${displayHours}:${minutes} ${period}`;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
